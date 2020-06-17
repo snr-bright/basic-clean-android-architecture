@@ -1,0 +1,95 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorBg</item>
+        <item name="android:textColorPrimary">@color/colorTitle</item>
+        <item name="android:textColor">@color/colorTitle</item>
+        <item name="android:textColorSecondary">@color/colorTitle</item>
+        <item name="android:textColorTertiary">@color/colorTitle</item>
+        <item name="colorControlNormal">@color/colorTitle</item>
+        <item name="actionMenuTextColor">@color/colorTitle</item>
+        <item name="colorControlActivated">@color/colorTitle</item>
+        <item name="colorControlHighlight">@color/colorTitle</item>
+        <item name="android:panelColorBackground">@color/colorPrimary</item>
+        <item name="android:panelBackground">@color/colorPrimary</item>
+        <item name="android:panelColorForeground">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorTitle</item>
+        <item name="textInputStyle">@style/MaterialTextBoxStyleOutline</item>
+        <item name="materialButtonStyle">@style/MaterialTextButtonStyle</item>
+        <item name="materialButtonOutlinedStyle">@style/MaterialTextButtonOutlineStyle</item>
+    </style>
+
+    <style name="MaterialTextBoxStyleOutline" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:bottomLeftRadius">0dp</item>
+        <item name="android:bottomRightRadius">0dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeColor">@color/colorSubTitle</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorSubTitle</item>
+        <item name="hintTextColor">@color/colorSubTitle</item>
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="android:textAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="colorControlNormal">@color/colorSubTitle</item>
+        <item name="colorControlActivated">@color/colorTitle</item>
+        <item name="colorControlHighlight">@color/colorSubTitle</item>
+        <item name="endIconTint">@color/colorTitle</item>
+    </style>
+
+    <!-- style for material button non-outlines-->
+    <style name="MaterialTextButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:bottomLeftRadius">2dp</item>
+        <item name="android:bottomRightRadius">2dp</item>
+        <item name="android:topLeftRadius">2dp</item>
+        <item name="android:topRightRadius">2dp</item>
+        <item name="boxCornerRadiusBottomEnd">2dp</item>
+        <item name="boxCornerRadiusBottomStart">2dp</item>
+        <item name="boxCornerRadiusTopEnd">2dp</item>
+        <item name="cornerRadius">2dp</item>
+        <item name="backgroundTint">@color/primary_button_states</item>
+        <item name="color">@color/primary_button_color_states</item>
+    </style>
+
+    <!--  style for the material button outlined-->
+    <style name="MaterialTextButtonOutlineStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="strokeColor">@color/primary_outline_button_states</item>
+        <item name="cornerRadius">2dp</item>
+        <item name="android:textColor">@color/primary_outline_color_states</item>
+    </style>
+
+    <!--    The text input style in the app -->
+    <style name="ErrorText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorSubTitle</item>
+    </style>
+
+</resources>
