@@ -13,7 +13,6 @@ android {
         targetSdkVersion rootProject.ext.appTargetSdkVersion
         versionCode rootProject.ext.appVersionCode
         versionName rootProject.ext.appVersionName
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,11 +28,12 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation rootProject.ext.suportDependencies.values()
     implementation rootProject.ext.room.values()
-    implementation rootProject.ext.retrofit.values()
     implementation rootProject.ext.koin.values()
     implementation rootProject.ext.coroutineDependencies.values()
+    implementation rootProject.ext.liveCycle.values()
 
-    kapt "androidx.room:room-compiler:$roomVersion"
+    kapt rootProject.ext.roomKapt
+    kapt rootProject.ext.liveCycleKapt
 
     //java unit test cases
     testImplementation rootProject.ext.mockito

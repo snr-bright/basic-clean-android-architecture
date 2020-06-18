@@ -15,6 +15,8 @@ ext {
     roomVersion = "2.2.5"
     expressoVersion = "3.2.0"
     testRunnnerVersion = "1.2.0"
+    def lifecycleVersion = "2.2.0"
+    def archVersion = "2.1.0"
 
     def localProperties = new Properties()
     localProperties.load(new FileInputStream(rootProject.file("local.properties")))
@@ -52,9 +54,20 @@ ext {
             koin: "org.koin:koin-android-viewmodel:1.0.1"
     ]
 
+    liveCycle = [
+            lifeCycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+            liveData : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    ]
+
+    liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    // Annotation processor
+    liveCycleKapt = "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+    roomKapt = "androidx.room:room-compiler:$roomVersion"
+
     // Testing section
     junit = "junit:junit:4.12"
     mockito = "org.mockito:mockito-core:3.3.0"
+    testLifeCycle = "androidx.arch.core:core-testing:$archVersion"
     testRunnner = [
             testRunnnerCore: "androidx.test:core:$testRunnnerVersion",
             testRunnner    : "androidx.test:runner:$testRunnnerVersion"
