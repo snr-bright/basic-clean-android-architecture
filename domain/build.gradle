@@ -2,8 +2,7 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.coroutineDependencies.values()
+    implementation rootProject.ext.koin.values()
 }
 
 sourceCompatibility = "1.7"

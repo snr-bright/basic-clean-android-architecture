@@ -16,6 +16,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -31,7 +33,7 @@ dependencies {
     implementation rootProject.ext.koin.values()
     implementation rootProject.ext.coroutineDependencies.values()
     implementation rootProject.ext.liveCycle.values()
-
+    implementation rootProject.ext.retrofit.values()
     kapt rootProject.ext.roomKapt
     kapt rootProject.ext.liveCycleKapt
 

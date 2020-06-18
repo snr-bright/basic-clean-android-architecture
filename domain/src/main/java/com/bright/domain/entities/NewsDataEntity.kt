@@ -2,7 +2,7 @@ package com.bright.domain.entities
 
 
 data class NewsDataEntity(
-    var id: Int = 0,
+    var id: String? = null,
     var title: String? = null,
     var description: String? = null,
     var url: String? = null,

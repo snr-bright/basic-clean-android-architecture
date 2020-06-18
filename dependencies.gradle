@@ -22,6 +22,8 @@ ext {
     localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
     baseUrlTest = localProperties["baseUrl"]
+    apiKey = localProperties["apiKey"]
+
 
 
     suportDependencies = [

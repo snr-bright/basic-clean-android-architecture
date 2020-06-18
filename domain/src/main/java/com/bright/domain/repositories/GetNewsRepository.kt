@@ -1,12 +1,8 @@
 package com.bright.domain.repositories
 
-import com.bright.domain.entities.NewsStatusDataEntity
-import com.bright.domain.entities.DataEntity
-import kotlinx.coroutines.channels.ReceiveChannel
+import com.bright.domain.entities.NewsDataEntity
+import com.bright.domain.util.EntityResult
 
 interface GetNewsRepository {
-    suspend fun getNews(): ReceiveChannel<DataEntity<NewsStatusDataEntity>>
-    suspend fun getLocalNews(): ReceiveChannel<DataEntity<NewsStatusDataEntity>>
-    suspend fun getRemoteNews(): ReceiveChannel<DataEntity<NewsStatusDataEntity>>
-
+    fun getNews(getFromRemote: Boolean):  EntityResult<List<NewsDataEntity>>
 }

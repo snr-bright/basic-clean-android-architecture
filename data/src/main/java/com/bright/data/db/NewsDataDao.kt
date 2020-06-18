@@ -1,32 +1,37 @@
 package com.bright.data.db
 
-import androidx.lifecycle.LiveData
-import androidx.room.*
-import com.bright.data.entities.NewsData
-import io.reactivex.Flowable
+import com.bright.data.entities.NewDataRealm
+import com.bright.data.mapper.NewsMapperLocal
+import com.bright.domain.entities.NewsDataEntity
+import com.vicpin.krealmextensions.deleteAll
+import com.vicpin.krealmextensions.queryAll
+import com.bright.domain.util.EntityResult
+import com.vicpin.krealmextensions.save
+import com.vicpin.krealmextensions.saveAll
 
-@Dao
-interface NewsDataDao {
+class NewsDataDao {
 
-    @Query("Select * from news_data_table")
-    fun getAllNewsData(): Flowable<List<NewsData>?>
+    fun getAllNews(): EntityResult<List<NewsDataEntity>> {
+        val mapper = NewsMapperLocal()
+        val realmNews = NewDataRealm().queryAll()
+        val convertedEntities = ArrayList<NewsDataEntity>()
+        realmNews.forEach {
+            convertedEntities.add(mapper.transform(it))
+        }
+        return EntityResult.Success(convertedEntities)
+    }
 
-//    @Query("Select * from news_data_table")
-//    fun getAllNewsData(): LiveData<List<NewsData>>
+    fun updateNews(news: NewsDataEntity) {
+        val mapperLocal = NewsMapperLocal()
+        val convertedEntity = mapperLocal.transformToRepository(news)
+        convertedEntity.save()
+    }
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllNewsData(newDataList: List<NewsData>)
+    fun clearAll() {
+        NewDataRealm().deleteAll()
+    }
 
-    @Query("DELETE FROM news_data_table")
-    fun clear()
-
-    @Delete()
-    fun delete(newData: NewsData)
-
-    @Update()
-    fun update(newData: NewsData)
-
-    @Insert()
-    fun addData(newData: NewsData)
-
+    fun saveAllNews(news: List<NewDataRealm>) {
+        news.saveAll()
+    }
 }
