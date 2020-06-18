@@ -3,7 +3,7 @@ package com.rakshitjain.domain.usecases
 import com.rakshitjain.domain.common.BaseJobUseCase
 import com.rakshitjain.domain.entities.NewsSourcesEntity
 import com.rakshitjain.domain.repositories.NewsRepository
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlin.coroutines.CoroutineContext
 

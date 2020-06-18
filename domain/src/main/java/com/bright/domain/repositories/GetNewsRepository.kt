@@ -1,7 +1,7 @@
 package com.bright.domain.repositories
 
 import com.bright.domain.entities.NewsStatusDataEntity
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.channels.ReceiveChannel
 
 interface GetNewsRepository {

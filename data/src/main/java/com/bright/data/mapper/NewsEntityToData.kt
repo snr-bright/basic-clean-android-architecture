@@ -3,7 +3,7 @@ package com.bright.data.mapper
 import com.bright.data.entities.NewsData
 import com.bright.domain.entities.NewsStatusDataEntity
 import com.bright.domain.entities.NewsDataEntity
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 
 class NewsEntityToData constructor() {
 

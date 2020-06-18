@@ -1,6 +1,6 @@
 package com.bright.domain.util
 
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach

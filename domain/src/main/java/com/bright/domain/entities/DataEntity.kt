@@ -1,6 +1,4 @@
-package com.rakshitjain.presentation.entities
-
-import com.bright.domain.entities.ErrorEntity
+package com.bright.domain.entities
 
 
 /**

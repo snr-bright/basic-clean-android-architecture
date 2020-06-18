@@ -5,7 +5,7 @@ import com.bright.data.db.NewsDatabase
 import com.bright.data.mapper.NewsDataToEntity
 import com.bright.data.mapper.NewsEntityToData
 import com.bright.domain.entities.NewsStatusDataEntity
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.reactive.openSubscription
 

@@ -3,7 +3,7 @@ package com.bright.domain.usecases
 import com.bright.domain.entities.NewsStatusDataEntity
 import com.bright.domain.repositories.GetNewsRepository
 import com.bright.domain.util.BaseJobUseCase
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlin.coroutines.CoroutineContext
 

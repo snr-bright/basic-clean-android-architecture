@@ -2,7 +2,7 @@ package com.bright.data.repositories
 
 import com.bright.domain.entities.NewsStatusDataEntity
 import com.bright.domain.repositories.GetNewsRepository
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach

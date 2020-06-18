@@ -3,7 +3,7 @@ package com.bright.data.repositories
 import com.bright.data.api.RemoteNewsApi
 import com.bright.data.mapper.NewsDataToEntity
 import com.bright.domain.entities.NewsStatusDataEntity
-import com.rakshitjain.presentation.entities.DataEntity
+import com.bright.domain.entities.DataEntity
 import com.bright.domain.entities.ErrorEntity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.ReceiveChannel
