@@ -1,11 +1,14 @@
 package com.bright.data.entities
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "news_table")
 data class NewsApiResponse(
     @SerializedName("author")  var author: String? = "",
     @SerializedName("title") var title: String? = null,
     @SerializedName("description") var description: String? = null,
     @SerializedName("url") var url: String? = null,
     @SerializedName("urlToImage") var urlToImage: String? = null,
+    @SerializedName("source") var source: NewsApiSource? = null,
     @SerializedName("publishedDate") var publishedDate: String? = null)

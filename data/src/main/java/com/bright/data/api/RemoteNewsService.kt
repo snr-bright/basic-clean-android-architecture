@@ -1,6 +1,5 @@
 package com.bright.data.api
 
-import android.util.Log
 import com.bright.data.mapper.NewsMapperService
 import com.bright.domain.entities.NewsDataEntity
 import com.bright.domain.util.EntityResult

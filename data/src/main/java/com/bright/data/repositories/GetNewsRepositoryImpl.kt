@@ -1,8 +1,7 @@
 package com.bright.data.repositories
 
-import android.util.Log
 import com.bright.data.api.RemoteNewsService
-import com.bright.data.db.NewsDataDao
+import com.bright.data.database.realm.NewsDataDao
 import com.bright.data.entities.NewDataRealm
 import com.bright.data.mapper.NewsMapperLocal
 import com.bright.domain.entities.NewsDataEntity

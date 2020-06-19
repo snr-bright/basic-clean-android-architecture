@@ -1,4 +1,4 @@
-package com.bright.data.db
+package com.bright.data.database.realm
 
 import com.bright.data.entities.NewDataRealm
 import com.bright.data.mapper.NewsMapperLocal
