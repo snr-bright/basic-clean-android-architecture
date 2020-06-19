@@ -34,5 +34,5 @@ open class NewsMapperService : BaseMapperRepository<NewsApiResponse, NewsDataEnt
         NewsSourceDataEntity(source.id, source.name)
 
     private fun mapSource(source: NewsSourceDataEntity) =
-        NewsApiSource(source.id, source.name)
+        NewsApiSource(source.id!!, source.name)
 }

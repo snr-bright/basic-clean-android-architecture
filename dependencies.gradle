@@ -21,7 +21,7 @@ ext {
     def localProperties = new Properties()
     localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
-    baseUrlTest = localProperties["baseUrl"]
+    baseUrl = localProperties["baseUrl"]
     apiKey = localProperties["apiKey"]
 
 

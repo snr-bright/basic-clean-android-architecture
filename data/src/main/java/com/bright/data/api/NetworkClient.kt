@@ -8,7 +8,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 private const val PUBLIC_API_KEY_ARG = "apiKey"
-private const val BASE_URL = "https://newsapi.org/v2/"
 private const val MAX_TRYOUTS = 3
 private const val INIT_TRYOUT = 1
 
@@ -50,7 +49,7 @@ class NetworkClient {
         }
 
     private val builder = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
 
     fun <S> createService(serviceClass: Class<S>): S {

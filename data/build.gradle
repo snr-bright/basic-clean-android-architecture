@@ -26,6 +26,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
         buildConfigField("String", "API_KEY", "$rootProject.ext.apiKey")
+        buildConfigField("String", "BASE_URL", "$rootProject.ext.baseUrl")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
     }
 
     buildTypes {
@@ -39,12 +49,14 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.github.vicpinm:krealmextensions:2.5.0'
+    implementation "com.github.vicpinm:krealmextensions:2.5.0"
     implementation rootProject.ext.room.values()
     implementation rootProject.ext.liveData
     implementation rootProject.ext.retrofit.values()
     kapt rootProject.ext.roomKapt
-    testImplementation rootProject.ext.junit
 
     implementation project(":domain")
+
+    testImplementation rootProject.ext.junit
+
 }
