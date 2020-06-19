@@ -6,8 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
+import coil.transform.BlurTransformation
+import coil.transform.CircleCropTransformation
 import com.bright.cleanarchitecturenewsfeed.R
 import com.bright.domain.entities.NewsDataEntity
+import com.squareup.picasso.Picasso
 
 
 /**
@@ -47,26 +51,33 @@ class FeedAdapter() :
 
 
     override fun getItemViewType(position: Int): Int {
-        return when {
-            items[position] is NewsDataEntity -> constant
-            else -> -1
-        }
+        return constant
     }
 
 
     //MARK: configure the device
     private fun configureViewHolder(viewHolder: ViewHolderNews, data: NewsDataEntity) {
         val textViewTitle = viewHolder.textViewTitle
-        val imageViewDeal = viewHolder.imageView
+        val textViewAuthor = viewHolder.textViewAuthor
+        val imageView = viewHolder.imageView
 
         textViewTitle?.text = data.title
+        textViewAuthor?.text = data.author
+        Picasso.get()
+            .load(data.urlToImage)
+            .placeholder(R.drawable.ic_image_placeholder)
+            .error(R.drawable.ic_image_placeholder)
+            .into(imageView)
+
     }
 
     class ViewHolderNews(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageView: ImageView? = null
         var textViewTitle: TextView? = null
+        var textViewAuthor: TextView? = null
 
         init {
+            textViewAuthor = itemView.findViewById(R.id.textViewAuthor)
             textViewTitle = itemView.findViewById(R.id.textViewTitle)
             imageView = itemView.findViewById(R.id.imageView)
         }

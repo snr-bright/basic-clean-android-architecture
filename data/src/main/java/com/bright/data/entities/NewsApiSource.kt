@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "news_source_table" , foreignKeys = [ForeignKey(entity = NewsApiResponse::class,
-    parentColumns = arrayOf("sourceId"),
-    childColumns = arrayOf("id"),
+    parentColumns = ["sourceId"],
+    childColumns = ["id"],
     onDelete = ForeignKey.CASCADE)]
 )
 data class NewsApiSource(

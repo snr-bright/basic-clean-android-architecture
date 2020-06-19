@@ -25,7 +25,6 @@ ext {
     apiKey = localProperties["apiKey"]
 
 
-
     suportDependencies = [
             appcompat         : "androidx.appcompat:appcompat:$appcompatVersion",
             appcompatResources: "androidx.appcompat:appcompat-resources:$appcompatVersion",
@@ -78,6 +77,13 @@ ext {
             expressoCore    : "androidx.test.espresso:espresso-core:$expressoVersion",
             expressoIntent  : "androidx.test.espresso:espresso-intents:$expressoVersion",
             expressoConntrib: "androidx.test.espresso:espresso-contrib:$expressoVersion"
+    ]
+
+    //MARK: extra app libraries
+    extra = [
+            coil            : "io.coil-kt:coil:0.11.0",
+            roundedimageview: "com.makeramen:roundedimageview:2.3.0",
+            picasso: "com.squareup.picasso:picasso:2.71828"
     ]
 
 }

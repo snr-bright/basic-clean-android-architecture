@@ -3,6 +3,7 @@ package com.bright.cleanarchitecturenewsfeed.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bright.cleanarchitecturenewsfeed.R
 import com.bright.cleanarchitecturenewsfeed.adapter.FeedAdapter
@@ -21,6 +22,7 @@ class NewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
+
         bindView()
 
         viewModel.mainState.observe(::getLifecycle, ::updateUI)
@@ -37,20 +39,18 @@ class NewsActivity : AppCompatActivity() {
     private fun updateUI(result: Data<List<NewsDataEntity>>) {
         when (result.responseType) {
             Status.ERROR -> {
-                Log.e("NEWS", result.error.toString())
-                //hideProgress()
+                contentLoadingProgressBar.visibility = View.INVISIBLE
                 result.error?.message?.let {
                     Log.e("NEWS", it)
                 }
             }
             Status.LOADING -> {
-                Log.e("NEWS", "LOADING")
-                // showProgress()
+                contentLoadingProgressBar.visibility = View.VISIBLE
             }
             Status.SUCCESSFUL -> {
-                Log.e("NEWS", "SUCCESS")
-                //hideProgress()
+                contentLoadingProgressBar.visibility = View.INVISIBLE
                 result.data?.let {
+                    Log.e("NEWS", it.toString())
                     listAdapter.updateList(it)
                 }
             }

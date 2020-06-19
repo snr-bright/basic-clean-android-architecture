@@ -13,10 +13,19 @@ android {
         targetSdkVersion rootProject.ext.appTargetSdkVersion
         versionCode rootProject.ext.appVersionCode
         versionName rootProject.ext.appVersionName
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 
     buildTypes {
         release {
@@ -34,6 +43,7 @@ dependencies {
     implementation rootProject.ext.coroutineDependencies.values()
     implementation rootProject.ext.liveCycle.values()
     implementation rootProject.ext.retrofit.values()
+    implementation rootProject.ext.extra.values()
     kapt rootProject.ext.roomKapt
     kapt rootProject.ext.liveCycleKapt
 

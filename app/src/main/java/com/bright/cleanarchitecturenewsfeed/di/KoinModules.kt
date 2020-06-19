@@ -15,7 +15,7 @@ import org.koin.dsl.module.module
 
 
 private const val RETROFIT_INSTANCE = "Retrofit"
-private const val GET_NEWS_USECASE = "getNewsUseCase"
+private const val GET_NEWS_USE_CASE = "getNewsUseCase"
 private const val ROOM_DATABASE = "room_database"
 private const val REALM_DATABASE = "realm_database"
 private const val LOCAL_MAPPER = "local_mapper"
@@ -31,15 +31,14 @@ val repositoriesModule = module {
         )
     }
 }
-
 val realmModule = module {
     single(name = REALM_DATABASE) { NewsDataDao() }
 }
 val viewModelsModule = module {
-    viewModel { NewsViewModel(get(GET_NEWS_USECASE))}
+    viewModel { NewsViewModel(get(GET_NEWS_USE_CASE))}
 }
 val useCasesModule = module {
-    single(name = GET_NEWS_USECASE) { GetNewsUseCase() }
+    single(name = GET_NEWS_USE_CASE) { GetNewsUseCase() }
 }
 val roomLocalModules = module {
     single(name = ROOM_DATABASE) {
