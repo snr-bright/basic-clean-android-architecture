@@ -4,7 +4,6 @@ import com.bright.data.entities.NewDataRealm
 import com.bright.data.entities.NewSourceRealm
 import com.bright.domain.entities.NewsDataEntity
 import com.bright.domain.entities.NewsSourceDataEntity
-import io.realm.annotations.PrimaryKey
 import java.util.*
 
 class NewsMapperLocal : BaseMapperRepository<NewDataRealm, NewsDataEntity> {

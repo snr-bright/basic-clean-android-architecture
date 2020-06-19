@@ -35,15 +35,12 @@ val repositoriesModule = module {
 val realmModule = module {
     single(name = REALM_DATABASE) { NewsDataDao() }
 }
-
 val viewModelsModule = module {
-    viewModel { NewsViewModel(get()) }
+    viewModel { NewsViewModel(get(GET_NEWS_USECASE))}
 }
-
 val useCasesModule = module {
     single(name = GET_NEWS_USECASE) { GetNewsUseCase() }
 }
-
 val roomLocalModules = module {
     single(name = ROOM_DATABASE) {
         Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "app_database").build()

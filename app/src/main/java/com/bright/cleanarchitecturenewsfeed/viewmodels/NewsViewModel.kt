@@ -1,10 +1,10 @@
 package com.bright.cleanarchitecturenewsfeed.viewmodels
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.*
 import com.bright.cleanarchitecturenewsfeed.entities.Data
 import com.bright.cleanarchitecturenewsfeed.entities.Status
+import com.bright.data.entities.NewsApiResponse
+import com.bright.data.mapper.NewsMapperService
 import com.bright.domain.entities.NewsDataEntity
 import com.bright.domain.usecases.GetNewsUseCase
 import com.bright.domain.util.EntityResult
@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel() {
+class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel(), LifecycleObserver {
 
     private var mutableMainState: MutableLiveData<Data<List<NewsDataEntity>>> = MutableLiveData()
     val mainState: LiveData<Data<List<NewsDataEntity>>>
@@ -20,6 +20,8 @@ class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel() {
             return mutableMainState
         }
 
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun getNewData() = launch {
         mutableMainState.value = Data(responseType = Status.LOADING)
         when (val result = withContext(Dispatchers.IO) { getNewsUseCase(true) }) {
