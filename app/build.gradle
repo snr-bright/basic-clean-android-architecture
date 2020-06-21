@@ -53,6 +53,7 @@ dependencies {
     //android instrumentation test classes
     androidTestImplementation rootProject.ext.expreso.values()
     androidTestImplementation rootProject.ext.testRunnner.values()
+    debugImplementation rootProject.ext.leakCanaryDebud
 
     //MARK: including other domains
     implementation project(':data')

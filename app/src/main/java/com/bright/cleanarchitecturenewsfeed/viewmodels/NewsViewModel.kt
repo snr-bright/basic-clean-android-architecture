@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel(), LifecycleObserver {
+class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel() {
 
     private var mutableMainState: MutableLiveData<Data<List<NewsDataEntity>>> = MutableLiveData()
     val mainState: LiveData<Data<List<NewsDataEntity>>>
@@ -21,7 +21,6 @@ class NewsViewModel(val getNewsUseCase: GetNewsUseCase) : BaseViewModel(), Lifec
         }
 
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun getNewData() = launch {
         mutableMainState.value = Data(responseType = Status.LOADING)
         when (val result = withContext(Dispatchers.IO) { getNewsUseCase(true) }) {

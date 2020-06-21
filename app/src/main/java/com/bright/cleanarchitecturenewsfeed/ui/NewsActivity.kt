@@ -36,21 +36,24 @@ class NewsActivity : AppCompatActivity() {
         recyclerView.adapter = listAdapter
     }
 
+    //MARK: update
     private fun updateUI(result: Data<List<NewsDataEntity>>) {
         when (result.responseType) {
             Status.ERROR -> {
                 contentLoadingProgressBar.visibility = View.INVISIBLE
+                textViewError.visibility = View.INVISIBLE
                 result.error?.message?.let {
-                    Log.e("NEWS", it)
+                    textViewError.text = it
                 }
             }
             Status.LOADING -> {
                 contentLoadingProgressBar.visibility = View.VISIBLE
+                textViewError.visibility = View.VISIBLE
             }
             Status.SUCCESSFUL -> {
                 contentLoadingProgressBar.visibility = View.INVISIBLE
+                textViewError.visibility = View.INVISIBLE
                 result.data?.let {
-                    Log.e("NEWS", it.toString())
                     listAdapter.updateList(it)
                 }
             }
